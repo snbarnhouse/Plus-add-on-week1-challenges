@@ -28,6 +28,13 @@
         date.innerHTML = new Date();
       }
       setTimeout(displayDate, 5000);
+
+      function displayMilliseconds() {
+        let milliseconds = document.querySelector("#milliseconds");
+        let currentDate = new Date();
+        milliseconds.innerHTML = currentDate.getMilliseconds();
+      }
+      setInterval(displayMilliseconds, 1);
     </script>
   </body>
 </html>
