@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>HTML Select Element</h1>
 
     <h3>Challenge 1</h3>
@@ -14,9 +14,9 @@
       Create a select element inside a form with 5 fruits as an option and label
       "What is your favorite fruit?"
     </p>
-    <form>
-      <label for="favorite-fruit">What is your favorite fruit?</label>
-      <select name="" id="fruit">
+    <form action="/go">
+      <label for="fruits">What is your favorite fruit?</label>
+      <select name="fruit" id="fruits">
         <option value="">Select a fruit</option>
         <option value="banana">🍌Banana</option>
         <option value="watermelon">🍉Watermelon</option>
@@ -34,30 +34,31 @@
       is selected by default.
     </p>
     <form>
-      <label for="primary-color">Choose your favorite primary color.</label>
-      <select name="" id="primary-color">
+      <label for="primary-colors">Choose your favorite primary color.</label>
+      <select name="color" id="primary-colors">
         <option value="">Choose a color</option>
         <option value="red">Red</option>
         <option value="blue">Blue</option>
         <option value="yellow">Yellow</option>
       </select>
     </form>
-    <script src="src/index.js">
-
-        function showSelectedColor(event) {
-          if (event.target.value.length > 0) {
+    <script>
+      function showSelectedColor(event) {
+        if (event.target.value.length > 0) {
           if (event.target.value === "red") {
-          alert("❤️");
-          } if (event.target.value === "blue") {
+            alert("❤️");
+          }
+          if (event.target.value === "blue") {
             alert("💙");
-          } if (event.target.value === "yellow") {
+          }
+          if (event.target.value === "yellow") {
             alert("💛");
           }
         }
-        }
+      }
 
-      let colorSelect = document.querySelector("#primary-color");
+      let colorSelect = document.querySelector("#primary-colors");
       colorSelect.addEventListener("change", showSelectedColor);
     </script>
-</body>
+  </body>
 </html>
