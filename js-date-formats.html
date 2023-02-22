@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Challenge 1 import CDN of moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <title>JS Date Formats</title>
   </head>
@@ -27,11 +28,12 @@
     </p>
     <div id="future-date">👉 Date here 👈</div>
     <script>
+//Challenge 2
       let today = moment().format("[Today is ] dddd, MMMM DD, YYYY");
       let todayElement = document.querySelector("#current-date");
       todayElement.innerHTML = today;
-
-      let futureDate = moment().add(10, "years").format("[10 years from now, it will be ] dddd, MMMM DD, YYYY h:mm:ss");
+//Challenge 3
+      let futureDate = moment().add(10, "years").format("[10 years from now, it will be ] dddd, MMMM DD, YYYY h:mm:ss A");
       let futureDateElement = document.querySelector("#future-date");
       futureDateElement.innerHTML = futureDate;
     </script>
