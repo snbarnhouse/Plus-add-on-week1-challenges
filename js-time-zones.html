@@ -34,12 +34,21 @@
     <div id="local-time-zone">👉 Time zone here 👈</div>
     <script>
       //Challenge 2
-      let currentHawaiiDate = moment().tz("Pacific/Honolulu").format("[It is ]dddd, MMMM D, YYYY hh:mm A [in Honolulu, Hawaii.]");
+      let currentHawaiiDate = moment()
+        .tz("Pacific/Honolulu")
+        .format("[It is ]dddd, MMMM D, YYYY hh:mm A [in Honolulu, Hawaii.]");
       let hawaiiElement = document.querySelector("#current-date");
       hawaiiElement.innerHTML = currentHawaiiDate;
 
       //Challenge 3
-
+      let futureParisDate = moment()
+        .tz("Europe/Paris")
+        .add(10, "years")
+        .format(
+          "[10 years from now, it will be ]dddd, MMMM D, YYYY hh:mm A [in Pris, France.]"
+        );
+      let futureElement = document.querySelector("#future-date");
+      futureElement.innerHTML = futureParisDate;
       //Challenge 4
       let localTimeZone = moment.tz.guess();
       let localTimeZoneElement = document.querySelector("#local-time-zone");
