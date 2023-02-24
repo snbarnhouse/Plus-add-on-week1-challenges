@@ -18,6 +18,7 @@
       <option value="sydney">Sydney 🇦🇺</option>
     </select>
     <script>
+      // Function to show current day/time in choosen city
       function showCurrentDate(event) {
         if (event.target.value === "paris") {
           alert(`It is ${parisDate} in Europe/Paris.`);
@@ -29,6 +30,7 @@
           }
         }
       }
+      // Variables to store currect time/day
       let parisDate = moment()
         .tz("Europe/Paris")
         .format("dddd, MMMM D, YYYY h:mm A");
@@ -38,8 +40,9 @@
       let sydneyDate = moment()
         .tz("Australia/Sydney")
         .format("dddd, MMMM D, YYYY h:mm A");
-        let citySelected = document.querySelector("#city");
-        citySelected.addEventListener("click", showCurrentDate);
+      // Add event listener
+      let citySelected = document.querySelector("#city");
+      citySelected.addEventListener("click", showCurrentDate);
     </script>
   </body>
 </html>
