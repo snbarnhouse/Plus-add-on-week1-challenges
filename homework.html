@@ -43,9 +43,9 @@
         .tz("Australia/Sydney")
         .format("dddd, MMMM D, YYYY h:mm A");
 
-      // Add event listener
+      // Add event listener on change
       let citySelected = document.querySelector("#city");
-      citySelected.addEventListener("click", showCurrentDate);
+      citySelected.addEventListener("change", showCurrentDate);
     </script>
   </body>
 </html>
