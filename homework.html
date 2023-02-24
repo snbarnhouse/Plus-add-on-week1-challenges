@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Import CDN of moment.js and tz moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.40/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>Timezones Homework</title>
-</head>
-<body>
-      <select name="city" id="city">
-        <option value="">Select a city</option>
-        <option value="paris">Pairs 🇫🇷</option>
-        <option value="tokyo">Tokyo 🇯🇵</option>
-        <option value="sydney">Sydney 🇦🇺</option>
-      </select>
+  </head>
+  <body>
+    <!-- Dropdown menu with city options -->
+    <select name="city" id="city">
+      <option value="">Select a city</option>
+      <option value="paris">Pairs 🇫🇷</option>
+      <option value="tokyo">Tokyo 🇯🇵</option>
+      <option value="sydney">Sydney 🇦🇺</option>
+    </select>
     <script>
-
+      function showCurrentDate(event) {
+        if (event.target.value === "paris") {
+          alert(`It is ${parisDate} in Europe/Paris.`);
+        }
+        if (event.target.value === "tokyo") {
+          alert(`It is ${tokyoDate} in Asia/Tokyo.`);
+          if (event.target.value === "sydney") {
+            alert(`It is ${ydneyDate} in Australia/Sydney.`);
+          }
+        }
+      }
+      let parisDate = moment()
+        .tz("Europe/Paris")
+        .format("dddd, MMMM D, YYYY h:mm A");
+      let tokyoDate = moment()
+        .tz("Asia/Tokyo")
+        .format("dddd, MMMM D, YYYY h:mm A");
+      let sydneyDate = moment()
+        .tz("Australia/Sydney")
+        .format("dddd, MMMM D, YYYY h:mm A");
+        let citySelected = document.querySelector("#city");
+        citySelected.addEventListener("click", showCurrentDate);
     </script>
-</body>
+  </body>
 </html>
